@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import "./App.css";
 import instanamelogo from "./images/Instagram_logo.png";
 import Post from "./Components/Post";
+import ImageUpload from './Components/ImageUpload';
 import { db, auth } from "./firebase";
 import { Button, Input } from "@material-ui/core";
 
@@ -93,8 +94,12 @@ function App() {
 
     setOpenSignIn(false);
   }
+
   return (
     <div className="App">
+
+      <ImageUpload />
+
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app_signup">
