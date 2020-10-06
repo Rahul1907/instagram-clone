@@ -12,6 +12,8 @@
   object-fit: contain;
   border-bottom: 1px solid lightgray;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .app_headerImage {
@@ -27,4 +29,24 @@
 .app_signup{
   display: flex;
   flex-direction: column;
+}
+
+.post_right{
+  margin-left: 20px;
+}
+
+.app_posts{
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .app_posts{
+    display: block;
+  }
+  .post_right{
+    margin: 0;
+  }
 }
