@@ -2,12 +2,15 @@
   margin: 0;
 }
 
-.App{
+.App {
   background-color: #fafafa;
   height: 100vh;
 }
 
-.app_header{
+.app_header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: white;
   object-fit: contain;
   border-bottom: 1px solid lightgray;
@@ -22,20 +25,20 @@
   object-fit: contain;
 }
 
-.app_headerImage img{
+.app_headerImage img {
   width: 100%;
 }
 
-.app_signup{
+.app_signup {
   display: flex;
   flex-direction: column;
 }
 
-.post_right{
+.post_right {
   margin-left: 20px;
 }
 
-.app_posts{
+.app_posts {
   padding: 20px;
 
   display: flex;
@@ -43,10 +46,10 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .app_posts{
+  .app_posts {
     display: block;
   }
-  .post_right{
+  .post_right {
     margin: 0;
   }
 }
