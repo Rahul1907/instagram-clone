@@ -14,12 +14,8 @@ function Post({ postId, username, user, caption, imageUrl }) {
       unsubscribe = db
         .collection("posts")
         .doc(postId)
-        .collection("comments")
+        .collection("commnets")
         .onSnapshot((snapshot) => {
-          console.log(
-            "snap",
-            snapshot.docs.map((doc) => doc.data())
-          );
           setComments(snapshot.docs.map((doc) => doc.data()));
         });
     }
@@ -35,7 +31,7 @@ function Post({ postId, username, user, caption, imageUrl }) {
       text: comment,
       username: user.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    })
     setComment("");
   };
 
@@ -58,7 +54,7 @@ function Post({ postId, username, user, caption, imageUrl }) {
       </h4>
       {/* username + caption */}
       <div className="post_comments">
-        {comments.map((x) => {
+        {comments.map((comment) => {
           return (
             <p>
               <strong>{comment.username}</strong> {comment.text}
